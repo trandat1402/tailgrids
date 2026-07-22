@@ -1,12 +1,12 @@
-# Free React UI Components Powered by Tailwind CSS
+# React UI Components miễn phí, chạy trên Tailwind CSS
 
-**Tailgrids** is an open-source **React UI component library built with Tailwind CSS**. Ship modern web applications faster with an extensive collection of **100+ production-ready, fully customizable, copy-paste friendly components**, plus premium UI blocks and templates.
+**Tailgrids** là một thư viện React UI component mã nguồn mở được xây dựng bằng **Tailwind CSS**. Xây dựng ứng dụng web hiện đại nhanh hơn với bộ sưu tập đồ sộ gồm **hơn 100 component production-ready, tùy biến hoàn toàn, thân thiện với copy-paste**, cùng các UI block và template premium.
 
 [![Tailgrids](tailgrids.png)](https://tailgrids.com)
 
-All components feature a **sleek, handcrafted, pixel-perfect design** optimized for exceptional UX, high performance, accessibility (a11y), dark mode, and responsiveness.
+Tất cả component đều có **thiết kế tinh gọn, làm thủ công, pixel-perfect**, tối ưu cho UX xuất sắc, hiệu năng cao, accessibility (a11y), dark mode và responsive.
 
-Build human-centered websites, dashboards, SaaS products, landing pages, and internal tools — without reinventing the UI from scratch.
+Xây dựng website, dashboard, sản phẩm SaaS, landing page và công cụ nội bộ lấy con người làm trung tâm - mà không phải dựng lại UI từ đầu.
 
 [![GitHub stars](https://img.shields.io/github/stars/TailGrids/tailgrids?style=social)](https://github.com/TailGrids/tailgrids)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/TailGrids/tailgrids/blob/main/LICENSE)
@@ -14,25 +14,25 @@ Build human-centered websites, dashboards, SaaS products, landing pages, and int
 
 ---
 
-## 📦 Quick Installation
+## 📦 Cài đặt nhanh
 
-Set up Tailgrids in your React / Next.js project in seconds.
+Thiết lập Tailgrids trong dự án React / Next.js của bạn chỉ trong vài giây.
 
-### 1. Initialize Tailgrids
+### 1. Khởi tạo Tailgrids
 
 ```bash
 npx @tailgrids/cli@latest init
 ```
 
-This creates the config, base styles, and installs required dependencies.
+Lệnh này tạo file config, base style và cài đặt các dependency cần thiết.
 
-### 2. Add Your First Component
+### 2. Thêm component đầu tiên
 
 ```bash
 npx @tailgrids/cli@latest add button
 ```
 
-### 3. Use It
+### 3. Sử dụng
 
 ```tsx
 import { Button } from "@/components/core/button";
@@ -42,32 +42,32 @@ export default function Home() {
 }
 ```
 
-**Full installation guide →** [Tailgrids Installation Docs](https://tailgrids.com/docs/installation)
+**Hướng dẫn cài đặt đầy đủ →** [Tailgrids Installation Docs](https://tailgrids.com/docs/installation)
 
 ---
 
-## ✨ Key Features
+## ✨ Tính năng chính
 
-- **100+ free React components** – Production-ready and actively expanding
-- **Premium UI Blocks** – 500+ ready-to-use sections for apps, dashboards, marketing, e-commerce, and AI
-- **React + TypeScript first-class support** – Fully rebuilt in v3 with clean JSX/TSX
-- **Powered by Tailwind CSS** – 100% customizable with utility classes
-- **Tailgrids CLI** – Instant component installation
-- **Modern design tokens** + flexible theming system
-- **Built-in accessibility**, dark mode, responsive design, and keyboard navigation
-- **Works with Next.js, Vite, CRA**, and all major React frameworks
-- **No heavy dependencies** – Lightweight and maintainable
-- **Beautiful open-source SVG icon library** included
+- **Hơn 100 React component miễn phí** - Production-ready và liên tục được mở rộng
+- **UI Block premium** - Hơn 500 section dựng sẵn cho app, dashboard, marketing, e-commerce và AI
+- **Hỗ trợ React + TypeScript hạng nhất** - Được viết lại hoàn toàn ở v3 với JSX/TSX gọn gàng
+- **Chạy trên Tailwind CSS** - Tùy biến 100% bằng utility class
+- **Tailgrids CLI** - Cài đặt component tức thì
+- **Design token hiện đại** cùng hệ thống theming linh hoạt
+- **Accessibility tích hợp sẵn**, dark mode, responsive design và keyboard navigation
+- **Hoạt động với Next.js, Vite, CRA** và mọi React framework phổ biến
+- **Không phụ thuộc nặng nề** - Nhẹ và dễ bảo trì
+- Đi kèm **thư viện SVG icon mã nguồn mở đẹp mắt**
 
 ---
 
-## 🔗 Essential Links
+## 🔗 Liên kết quan trọng
 
-| Resource              | Link                                      |
+| Tài nguyên            | Liên kết                                  |
 |-----------------------|-------------------------------------------|
 | **Website**           | [tailgrids.com](https://tailgrids.com)    |
 | **Documentation**     | [tailgrids.com/docs](https://tailgrids.com/docs) |
-| **All Components**    | [tailgrids.com/docs/components](https://tailgrids.com/docs/components) |
+| **Tất cả component**  | [tailgrids.com/docs/components](https://tailgrids.com/docs/components) |
 | **UI Blocks**         | [tailgrids.com/blocks](https://tailgrids.com/blocks) |
 | **Templates**         | [tailgrids.com/templates](https://tailgrids.com/templates) |
 | **Changelog**         | [tailgrids.com/docs/changelog](https://https://tailgrids.com/docs/changelog) |
@@ -78,9 +78,9 @@ export default function Home() {
 
 ## UI Components
 
-**100+ free, production-ready React components** — categorized for easy browsing.
+**Hơn 100 React component miễn phí, production-ready** - được phân loại để dễ duyệt.
 
-All components are fully documented with examples, API references, accessibility notes, and copy-paste code.
+Tất cả component đều có tài liệu đầy đủ kèm ví dụ, API reference, ghi chú về accessibility và code copy-paste.
 
 ### Core UI Components
 
@@ -137,46 +137,46 @@ All components are fully documented with examples, API references, accessibility
 - **[Toggle](https://tailgrids.com/docs/components/toggle)**
 - **[Tooltip](https://tailgrids.com/docs/components/tooltip)**
 
-**Browse the full interactive component library →** [tailgrids.com/docs/components](https://tailgrids.com/docs/components)
+**Duyệt toàn bộ thư viện component tương tác →** [tailgrids.com/docs/components](https://tailgrids.com/docs/components)
 
 ---
 
 ## 🧱 UI Blocks & Templates
 
-- **UI Blocks** – Pre-built sections for dashboards, apps, marketing, e-commerce, and AI products → [Explore Blocks](https://tailgrids.com/blocks)
+- **UI Blocks** - Các section dựng sẵn cho dashboard, app, marketing, e-commerce và sản phẩm AI → [Explore Blocks](https://tailgrids.com/blocks)
 
-- **Templates** – Complete, ready-to-use React + Tailwind pages and layouts → [Browse Templates](https://tailgrids.com/templates)
+- **Templates** - Trang và layout React + Tailwind hoàn chỉnh, dùng ngay → [Browse Templates](https://tailgrids.com/templates)
 
 ---
 
-## 🧠 Built for Developers and Designers
+## 🧠 Dành cho Developer và Designer
 
-Tailgrids is designed for **developers and designers** who ship real products:
+Tailgrids được thiết kế cho **developer và designer** chuyên tạo ra sản phẩm thực tế:
 
-- Clean, readable, TypeScript-ready React code
-- Enterprise-ready Figma design system (available for Pro users)
-- Consistent design language across free + premium ecosystem
-- Long-term maintainability and excellent developer experience
+- Code React sạch, dễ đọc, sẵn sàng cho TypeScript
+- Figma design system cấp doanh nghiệp (dành cho người dùng Pro)
+- Ngôn ngữ thiết kế nhất quán trên toàn hệ sinh thái free + premium
+- Khả năng bảo trì lâu dài và trải nghiệm developer tuyệt vời
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — free for personal and commercial use.
+Dự án này được cấp phép theo **MIT License** - miễn phí cho mục đích cá nhân và thương mại.
 
-See [LICENSE](https://github.com/TailGrids/tailgrids/blob/main/LICENSE) for details.
+Xem [LICENSE](https://github.com/TailGrids/tailgrids/blob/main/LICENSE) để biết chi tiết.
 
 ---
 
-## ❤️ Contributing
+## ❤️ Đóng góp
 
-We welcome contributions! Feel free to:
-- Read [contribtion guideline](https://github.com/TailGrids/tailgrids/blob/main/CONTRIBUTING.md)
-- Submit pull requests
-- Share feedback on Discord or GitHub Discussions
+Chúng tôi hoan nghênh mọi đóng góp! Bạn có thể:
+- Đọc [contribtion guideline](https://github.com/TailGrids/tailgrids/blob/main/CONTRIBUTING.md)
+- Gửi pull request
+- Chia sẻ phản hồi trên Discord hoặc GitHub Discussions
 
 ---
 
 **Made with ❤️ for the React Tailwind community.**
 
-Start building faster today → [Get Started](https://tailgrids.com/docs)
+Bắt đầu xây dựng nhanh hơn ngay hôm nay → [Get Started](https://tailgrids.com/docs)
