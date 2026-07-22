@@ -1,110 +1,110 @@
-# Contributing to Tailgrids
+# Đóng góp cho Tailgrids
 
-Thank you for your interest in contributing to Tailgrids.
-This guide will help you get started with the contribution process.
+Cảm ơn bạn đã quan tâm đến việc đóng góp cho Tailgrids.
+Hướng dẫn này sẽ giúp bạn bắt đầu quy trình đóng góp.
 
-## Project Structure
+## Cấu trúc dự án
 
-The Tailgrids monorepo is organized as follows:
+Monorepo của Tailgrids được tổ chức như sau:
 
-- `/apps/docs/content` - Documentation website
-- `/apps/docs/src/registry/core` - Core components by Tailgrids
-- `/apps/docs/src/components` - All components for the website
-- `/apps/docs/src/components/preview` - All presentational components
-- `/packages/cli` - Command-line interface tools
-- `/packages/icons` - Icon library
-- `/packages/eslint-config` - Shared ESLint configuration
-- `/packages/typescript-config` - Shared TypeScript configuration
+- `/apps/docs/content` - Website tài liệu
+- `/apps/docs/src/registry/core` - Các core component của Tailgrids
+- `/apps/docs/src/components` - Toàn bộ component cho website
+- `/apps/docs/src/components/preview` - Toàn bộ component trình bày (presentational)
+- `/packages/cli` - Công cụ command-line interface
+- `/packages/icons` - Thư viện icon
+- `/packages/eslint-config` - Cấu hình ESLint dùng chung
+- `/packages/typescript-config` - Cấu hình TypeScript dùng chung
 
-## Development Guidelines
+## Nguyên tắc phát triển
 
-When contributing to Tailgrids:
+Khi đóng góp cho Tailgrids:
 
-- Keep changes focused.
-  Large PRs are harder to review and unlikely to be accepted.
-  We recommend opening an issue and discussing it with us first.
-- Ensure all code is type-safe and takes full advantage of TypeScript features.
-- Write clear, self-explanatory code.
-  Use comments only when truly necessary.
-- Follow the existing code style and conventions.
-- We aim for stability, so avoid changes that would require users to run a migration or update their config.
+- Giữ cho các thay đổi tập trung.
+  PR lớn khó review hơn và ít khả năng được chấp nhận.
+  Chúng tôi khuyến nghị bạn mở một issue và trao đổi với chúng tôi trước.
+- Đảm bảo toàn bộ code là type-safe và tận dụng tối đa các tính năng của TypeScript.
+- Viết code rõ ràng, tự diễn giải.
+  Chỉ dùng comment khi thực sự cần thiết.
+- Tuân theo code style và quy ước hiện có.
+- Chúng tôi hướng tới sự ổn định, vì vậy hãy tránh các thay đổi buộc người dùng phải chạy migration hoặc cập nhật config.
 
-## Getting Started
+## Bắt đầu
 
-Before getting started, make sure you have Node.js installed in your machine. We use `npm` as our package manager (which already comes with Node.js's default installation). You can find the installation guide [here](https://nodejs.org/en/download) (LTS version recommended).
+Trước khi bắt đầu, hãy chắc chắn bạn đã cài Node.js trên máy. Chúng tôi dùng `npm` làm package manager (đã đi kèm sẵn khi cài mặc định Node.js). Bạn có thể xem hướng dẫn cài đặt [tại đây](https://nodejs.org/en/download) (khuyến nghị bản LTS).
 
-1. Find or open an [issue](https://github.com/TailGrids/tailgrids/issues) that you are interested in addressing or a feature that you would like to add.
+1. Tìm hoặc mở một [issue](https://github.com/TailGrids/tailgrids/issues) mà bạn quan tâm muốn xử lý, hoặc một tính năng bạn muốn thêm.
 
-2. Fork the repository to your GitHub account.
+2. Fork repository về tài khoản GitHub của bạn.
 
-3. Clone your fork locally:
+3. Clone bản fork về máy:
 
    ```bash
    git clone https://github.com/your-username/tailgrids.git
    cd tailgrids
    ```
 
-4. Install project dependencies:
+4. Cài đặt các dependency của dự án:
 
    ```bash
    npm install
    ```
 
-5. Create a `.env` file from the example:
-   - On Unix-based systems:
+5. Tạo file `.env` từ file mẫu:
+   - Trên hệ thống nền Unix:
      ```bash
      cp -n ./apps/docs/.env.example ./apps/docs/.env
      ```
-   - On Windows:
+   - Trên Windows:
      ```batch
      copy /Y .\apps\docs\.env.example .\apps\docs\.env
      ```
 
-   After creating the `.env` file, fill in the required values.
+   Sau khi tạo file `.env`, hãy điền các giá trị cần thiết.
 
-6. Build the project:
+6. Build dự án:
 
-   Internally we use all the icons locally from `packages/icons` which is exposed as `@tailgrids/icons`. So it is crucial to build the project before running the documentation locally.
+   Ở nội bộ, chúng tôi dùng toàn bộ icon cục bộ từ `packages/icons`, được expose dưới tên `@tailgrids/icons`. Vì vậy việc build dự án trước khi chạy tài liệu cục bộ là rất quan trọng.
 
    ```bash
    npm run build
    ```
 
-7. Run the project locally:
+7. Chạy dự án cục bộ:
 
    ```bash
    npm run dev
    ```
 
-## Code Formatting
+## Định dạng code
 
-We use [Prettier](https://prettier.io/) for code formatting and linting.
-Before committing, please ensure your code is properly formatted:
+Chúng tôi dùng [Prettier](https://prettier.io/) để format và lint code.
+Trước khi commit, hãy đảm bảo code của bạn được format đúng cách:
 
 ```bash
-# Format all code
+# Format toàn bộ code
 npm run format
 
-# Check for linting issues
+# Kiểm tra các vấn đề linting
 npm run lint
 ```
 
-## Development Workflow
+## Quy trình phát triển
 
-1. Create a new branch for your changes:
+1. Tạo một branch mới cho các thay đổi của bạn:
 
-   Follow the [Conventional Branch](https://conventional-branch.github.io/) naming convention to name your branch.
+   Đặt tên branch theo quy ước [Conventional Branch](https://conventional-branch.github.io/).
 
    ```bash
    git checkout -b type/description
-   # Example: git checkout -b feat/combobox
+   # Ví dụ: git checkout -b feat/combobox
    ```
 
-2. Make your changes following the code style guidelines
+2. Thực hiện thay đổi theo các nguyên tắc về code style
 
-3. Commit your changes with a descriptive message following the [Conventional Commits](https://www.conventionalcommits.org) specification:
+3. Commit thay đổi với thông điệp mô tả rõ ràng, tuân theo đặc tả [Conventional Commits](https://www.conventionalcommits.org):
 
-   For new components or features, use the `fix` or `feat` format with a specific scope:
+   Với component hoặc tính năng mới, dùng định dạng `fix` hoặc `feat` kèm scope cụ thể:
 
    ```text
    fix(select): multi select is not working.
@@ -112,17 +112,17 @@ npm run lint
    feat(cli): add support for new component generation.
    ```
 
-   For documentation changes, use `docs`:
+   Với thay đổi về tài liệu, dùng `docs`:
 
    ```bash
    docs: fix typos in README
 
-   # To be more specific
+   # Để cụ thể hơn
    docs(installation): improve installation explanation
    ```
 
-   For changes that refactor or don’t change the functionality of the library or
-   docs, use `chore`:
+   Với các thay đổi mang tính refactor hoặc không làm thay đổi chức năng của thư viện hay
+   tài liệu, dùng `chore`:
 
    ```bash
    chore(refactor): reorganize package exports
@@ -130,43 +130,43 @@ npm run lint
    chore: update dependencies to latest versions
    ```
 
-   Each commit message should be clear and descriptive, explaining what the
-   change does.
-   For features and fixes, include context about what was added or resolved.
+   Mỗi thông điệp commit cần rõ ràng và mang tính mô tả, giải thích thay đổi đó
+   làm gì.
+   Với tính năng và bản sửa lỗi, hãy nêu bối cảnh về những gì đã được thêm hoặc xử lý.
 
-4. Push your branch to your fork
+4. Push branch lên bản fork của bạn
 
-5. Open a pull request against the **main** branch. In your PR description:
-   - Clearly describe what changes you made and why
-   - Include any relevant context or background
-   - List any breaking changes or deprecations
-   - Add screenshots for UI changes
-   - Reference related issues or discussions
+5. Mở một pull request nhắm vào branch **main**. Trong phần mô tả PR:
+   - Mô tả rõ bạn đã thay đổi gì và tại sao
+   - Đưa vào bối cảnh hoặc thông tin nền liên quan
+   - Liệt kê mọi breaking change hoặc deprecation
+   - Thêm screenshot cho các thay đổi về UI
+   - Tham chiếu các issue hoặc discussion liên quan
 
-6. Title the pull request with a short description of the changes made and the issue or bug number associated with your change. For example, you can title an issue like so "feat(cli): add support for new component generation to resolve #2201".
+6. Đặt tiêu đề pull request bằng một mô tả ngắn về các thay đổi đã thực hiện và số issue hoặc bug liên quan đến thay đổi của bạn. Ví dụ, bạn có thể đặt tiêu đề như "feat(cli): add support for new component generation to resolve #2201".
 
-7. In the description of the pull request, explain the changes that you made, any issues you think exist with the pull request you made, and any questions you have for the maintainer. It's OK if your pull request is not perfect (no pull request is), the reviewer will be able to help you fix any problems and improve it!
+7. Trong phần mô tả pull request, hãy giải thích các thay đổi bạn đã thực hiện, mọi vấn đề bạn nghĩ có thể tồn tại với pull request của mình, và mọi câu hỏi bạn muốn hỏi maintainer. Không sao nếu pull request của bạn chưa hoàn hảo (không PR nào là hoàn hảo cả), reviewer sẽ giúp bạn khắc phục các vấn đề và cải thiện nó!
 
-8. Once you have submitted your pull request, you can expect a response from a maintainer within a few business days. If you do not hear back within a week, it is acceptable to send a friendly follow-up message.
+8. Sau khi gửi pull request, bạn có thể chờ phản hồi từ maintainer trong vài ngày làm việc. Nếu sau một tuần vẫn chưa nhận được phản hồi, việc gửi một tin nhắn nhắc nhở thân thiện là hoàn toàn ổn.
 
-9. If your pull request is not accepted, we will explain the reasons and suggest improvements. You can then make the suggested changes and resubmit your pull request.
+9. Nếu pull request của bạn không được chấp nhận, chúng tôi sẽ giải thích lý do và đề xuất cải thiện. Sau đó bạn có thể thực hiện các thay đổi được đề xuất và gửi lại pull request.
 
-10. Celebrate your success after your pull request is merged! 🎉 🎉
+10. Hãy ăn mừng thành công sau khi pull request của bạn được merge! 🎉 🎉
 
-## Pull Request Process
+## Quy trình Pull Request
 
-1. Before creating a PR, create a issue and discuss with us
-2. Reference any related issues in your PR description
-3. Ensure all tests pass and the build is successful
-4. Update documentation as needed
-5. Keep your PR focused on a single feature or bug fix
-6. Be responsive to code review feedback.
+1. Trước khi tạo PR, hãy tạo một issue và trao đổi với chúng tôi
+2. Tham chiếu mọi issue liên quan trong phần mô tả PR
+3. Đảm bảo toàn bộ test pass và build thành công
+4. Cập nhật tài liệu khi cần
+5. Giữ PR tập trung vào một tính năng hoặc một bản sửa lỗi duy nhất
+6. Phản hồi nhanh với các góp ý trong quá trình code review.
 
 ## Code Style
 
-- Follow the existing code style
-- Use TypeScript types and interfaces effectively
-- Keep functions small and focused
-- Use meaningful variable and function names
-- Add comments for complex logic
-- Follow the formatting rules
+- Tuân theo code style hiện có
+- Sử dụng type và interface của TypeScript một cách hiệu quả
+- Giữ các function nhỏ gọn và tập trung
+- Dùng tên biến và tên function có ý nghĩa
+- Thêm comment cho những đoạn logic phức tạp
+- Tuân theo các quy tắc định dạng
