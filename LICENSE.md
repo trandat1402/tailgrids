@@ -12,10 +12,10 @@ Phần mềm làm như vậy, tuân theo các điều kiện sau:
 Thông báo bản quyền nêu trên và thông báo cho phép này phải được bao gồm trong tất cả
 các bản sao hoặc các phần đáng kể của Phần mềm.
 
-PHẦN MỀM ĐƯỢC CUNG CẤP "NGUYÊN TRẠNG" (AS IS), KHÔNG CÓ BẢO ĐẢM DƯỚI BẤT KỲ HÌNH THỨC NÀO, DÙ RÕ RÀNG HAY
-NGỤ Ý, BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở CÁC BẢO ĐẢM VỀ KHẢ NĂNG THƯƠNG MẠI,
-SỰ PHÙ HỢP CHO MỘT MỤC ĐÍCH CỤ THỂ VÀ KHÔNG XÂM PHẠM. TRONG MỌI TRƯỜNG HỢP, CÁC
-TÁC GIẢ HOẶC CHỚ SỞ HỮU BẢN QUYỀN SẼ KHÔNG CHỊU TRÁCH NHIỆM CHO BẤT KỲ KHIẾU NẠI, THIỆT HẠI HAY
-TRÁCH NHIỆM NÀO KHÁC, DÙ TRONG MỘT HÀNH ĐỘNG HỢP ĐỒNG, VI PHẠM NGOÀI HỢP ĐỒNG (TORT) HAY CÁCH KHÁC, PHÁT SINH TỪ,
-DO HOẶC LIÊN QUAN ĐẾN PHẦN MỀM HOẶC VIỆC SỪ DỤNG HOẶC CÁC GIAO DỊCH KHÁC LIÊN QUAN ĐẾN
-PHẦN MỀM.
+Phần mềm được cung cấp "nguyên trạng" (as is), không có bảo đảm dưới bất kỳ hình thức nào, dù rõ ràng hay
+ngụ ý, bao gồm nhưng không giới hạn ở các bảo đảm về khả năng thương mại,
+sự phù hợp cho một mục đích cụ thể và không xâm phạm. Trong mọi trường hợp, các
+tác giả hoặc chủ sở hữu bản quyền sẽ không chịu trách nhiệm cho bất kỳ khiếu nại, thiệt hại hay
+trách nhiệm nào khác, dù trong một hành động hợp đồng, vi phạm ngoài hợp đồng (tort) hay cách khác, phát sinh từ,
+do hoặc liên quan đến Phần mềm hoặc việc sử dụng hoặc các giao dịch khác liên quan đến
+Phần mềm.
