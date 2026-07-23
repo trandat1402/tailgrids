@@ -1,0 +1,17 @@
+title: Tailgrids Docs
+description: Trang gioi thieu Tailgrids
+
+# Chi build cac trang trong /docs, bo qua toan bo source code cua monorepo
+exclude:
+  - apps
+  - packages
+  - node_modules
+  - package.json
+  - package-lock.json
+  - turbo.json
+  - eslint.config.mjs
+  - .changeset
+  - .vscode
+  - .github
+  - CONTRIBUTING.md
+  - LICENSE.md
