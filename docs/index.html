@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailgrids - Thu vien component Tailwind CSS</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #131a2e;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #6366f1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    h1 {
+      font-size: 2.25rem;
+      margin-bottom: 8px;
+    }
+    p.lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    a.btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    a.btn.primary {
+      background: var(--accent);
+      color: white;
+    }
+    a.btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Tailgrids</h1>
+    <p class="lead">Thu vien component UI xay dung tren Tailwind CSS, giup dung trang web nhanh hon voi cac khoi giao dien san co.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>San sang su dung</h3>
+        <p>Cac component duoc thiet ke san, chi can copy va tuy chinh theo nhu cau.</p>
+      </div>
+      <div class="card">
+        <h3>Tailwind CSS</h3>
+        <p>Tuong thich hoan toan voi he thong class cua Tailwind, de tich hop vao du an hien co.</p>
+      </div>
+      <div class="card">
+        <h3>Da dang loai giao dien</h3>
+        <p>Bao gom cac khoi cho landing page, dashboard, form, marketing va nhieu loai khac.</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="btn primary" href="https://github.com/trandat1402/tailgrids">Xem repo tren GitHub</a>
+      <a class="btn secondary" href="https://github.com/trandat1402/tailgrids/tree/main/apps/docs">Trang docs day du</a>
+    </div>
+
+    <footer>
+      Trang gioi thieu dat trong /docs cua repo tailgrids.
+    </footer>
+  </div>
+</body>
+</html>
