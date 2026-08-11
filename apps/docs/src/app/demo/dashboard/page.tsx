@@ -8,6 +8,27 @@ import {
   YAxis
 } from "recharts";
 import {
+  BarChart2,
+  Bell1,
+  BotUser1,
+  Calendar,
+  Cart2,
+  CheckCircle1,
+  ChevronDown,
+  ClockThree,
+  DashboardSquare1,
+  Dollar,
+  Gear1,
+  Megaphone1,
+  MenuHamburger1,
+  MenuKebab1,
+  MoonHalfLeft5,
+  SackDollar,
+  Search1,
+  TrendUp2,
+  UserMultiple1
+} from "@tailgrids/icons";
+import {
   Avatar,
   AvatarBadge,
   AvatarFallback
@@ -26,6 +47,7 @@ import {
   ChartTooltip,
   ChartTooltipContent
 } from "@/registry/core/chart";
+import { Input } from "@/registry/core/input";
 import { Progress } from "@/registry/core/progress";
 import {
   Sidebar,
@@ -41,66 +63,106 @@ import {
   SidebarProvider,
   SidebarTrigger
 } from "@/registry/core/sidebar";
-import {
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRoot,
-  TableRow
-} from "@/registry/core/table";
 
-const navigation = ["Tổng quan", "Khách hàng", "Đơn hàng", "Báo cáo", "Cài đặt"];
-
-const revenue = [
-  { month: "T1", value: 82 },
-  { month: "T2", value: 96 },
-  { month: "T3", value: 90 },
-  { month: "T4", value: 112 },
-  { month: "T5", value: 106 },
-  { month: "T6", value: 128 },
-  { month: "T7", value: 120 },
-  { month: "T8", value: 146 },
-  { month: "T9", value: 138 },
-  { month: "T10", value: 161 },
-  { month: "T11", value: 154 },
-  { month: "T12", value: 180 }
+const navigation = [
+  { label: "Dashboard", icon: DashboardSquare1, active: true },
+  { label: "eCommerce", icon: Cart2 },
+  { label: "Analytics", icon: BarChart2 },
+  { label: "Marketing", icon: Megaphone1 },
+  { label: "CRM", icon: UserMultiple1 },
+  { label: "Calendar", icon: Calendar },
+  { label: "Cài đặt", icon: Gear1 }
 ];
 
-const goals = [
-  { label: "Doanh thu", value: 85 },
-  { label: "Khách hàng mới", value: 64 },
-  { label: "Tỷ lệ giữ chân", value: 72 }
+const statistics = [
+  { month: "T2", revenue: 184, target: 66 },
+  { month: "T3", revenue: 178, target: 72 },
+  { month: "T4", revenue: 172, target: 68 },
+  { month: "T5", revenue: 166, target: 64 },
+  { month: "T6", revenue: 160, target: 62 },
+  { month: "T7", revenue: 156, target: 60 }
 ];
 
-const orders = [
-  { id: "#INV-1024", customer: "Nguyễn Minh Anh", amount: "12.400.000đ", status: "Hoàn tất", color: "success" as const },
-  { id: "#INV-1023", customer: "Trần Quốc Huy", amount: "8.950.000đ", status: "Đang xử lý", color: "warning" as const },
-  { id: "#INV-1022", customer: "Lê Thanh Hà", amount: "6.200.000đ", status: "Hoàn tất", color: "success" as const },
-  { id: "#INV-1021", customer: "Phạm Gia Bảo", amount: "4.750.000đ", status: "Chờ thanh toán", color: "gray" as const }
+const schedule = [
+  { date: "Thứ Tư, 11/6", title: "Business Analytics Press", time: "09:20" },
+  { date: "Thứ Sáu, 15/8", title: "Business Sprint", time: "10:35" },
+  { date: "Thứ Năm, 18/9", title: "Customer Review Meeting", time: "11:15" }
 ];
 
-function MetricCard({
+function IconButton({
   label,
-  value,
-  change,
-  color = "success"
+  children
 }: {
   label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Button
+      variant="primary"
+      appearance="outline"
+      iconOnly
+      size="sm"
+      aria-label={label}
+    >
+      {children}
+    </Button>
+  );
+}
+
+function MetricCard({
+  value,
+  label,
+  trend,
+  negative = false
+}: {
   value: string;
-  change: string;
-  color?: "success" | "warning" | "gray";
+  label: string;
+  trend: string;
+  negative?: boolean;
 }) {
   return (
     <Card className="border border-base-200 shadow-xs">
-      <CardHeader className="pb-0">
-        <CardDescription className="mt-0 text-sm">{label}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex items-end justify-between gap-4 pb-5">
-        <p className="text-2xl font-semibold text-title-50">{value}</p>
-        <Badge color={color}>{change}</Badge>
+      <CardContent className="py-5">
+        <p className="text-2xl font-semibold tracking-tight text-title-50">{value}</p>
+        <div className="mt-3 flex items-center justify-between gap-3">
+          <p className="text-sm text-text-100">{label}</p>
+          <Badge
+            color={negative ? "error" : "success"}
+            prefixIcon={<TrendUp2 size={12} className={negative ? "rotate-180" : ""} />}
+          >
+            {trend}
+          </Badge>
+        </div>
       </CardContent>
     </Card>
+  );
+}
+
+function CircleGauge() {
+  return (
+    <div className="mx-auto mt-1 w-full max-w-55">
+      <svg viewBox="0 0 200 116" className="w-full" role="img" aria-label="Doanh thu 90 đô la trong tháng 6">
+        <path
+          d="M 24 98 A 76 76 0 0 1 176 98"
+          fill="none"
+          stroke="var(--border-color-base-200)"
+          strokeLinecap="round"
+          strokeWidth="8"
+        />
+        <path
+          d="M 24 98 A 76 76 0 0 1 176 98"
+          fill="none"
+          stroke="var(--color-primary-500)"
+          strokeDasharray="190 239"
+          strokeLinecap="round"
+          strokeWidth="8"
+        />
+      </svg>
+      <div className="-mt-10 text-center">
+        <p className="text-xs text-text-100">Tháng 6</p>
+        <p className="mt-1 text-3xl font-semibold text-title-50">$90</p>
+      </div>
+    </div>
   );
 }
 
@@ -108,150 +170,198 @@ export default function AnalyticsDashboardPage() {
   return (
     <SidebarProvider>
       <Sidebar collapsible="icon">
-        <SidebarHeader>
-          <div className="flex h-10 items-center gap-3 px-2">
+        <SidebarHeader className="px-3 pt-4">
+          <div className="flex h-10 items-center gap-2.5">
             <div className="flex size-8 items-center justify-center rounded-lg bg-primary-500 text-sm font-bold text-white-100">T</div>
-            <span className="truncate text-base font-semibold text-title-50">Tailgrids</span>
+            <span className="truncate text-lg font-semibold tracking-tight text-title-50">TailAdmin</span>
           </div>
         </SidebarHeader>
 
-        <SidebarContent>
+        <SidebarContent className="mt-6 px-3">
           <SidebarGroup>
-            <SidebarGroupLabel>Điều hướng</SidebarGroupLabel>
+            <SidebarGroupLabel>Menu</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {navigation.map((item, index) => (
-                  <SidebarMenuItem key={item}>
-                    <SidebarMenuButton isActive={index === 0} tooltip={item}>
-                      <span aria-hidden="true" className="flex size-5 items-center justify-center rounded bg-background-soft-200 text-xs font-semibold text-text-100">{index + 1}</span>
-                      <span>{item}</span>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
+                {navigation.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <SidebarMenuItem key={item.label}>
+                      <SidebarMenuButton isActive={item.active} tooltip={item.label}>
+                        <Icon size={18} />
+                        <span>{item.label}</span>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
         </SidebarContent>
 
-        <SidebarFooter>
-          <Card className="bg-background-soft-50 p-3">
-            <p className="text-sm font-medium text-title-50">Tailgrids UI</p>
-            <p className="mt-1 text-xs leading-5 text-text-100">Component và token đang dùng cho màn hình này.</p>
-            <Button size="xs" className="mt-3 w-full">Xem tài liệu</Button>
-          </Card>
+        <SidebarFooter className="border-t border-base-200 p-3">
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton tooltip="AI Assistant">
+                <BotUser1 size={18} />
+                <span>AI Assistant</span>
+                <Badge color="success" className="ml-auto">New</Badge>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
         </SidebarFooter>
       </Sidebar>
 
       <main className="min-w-0 flex-1 bg-background-soft-50">
-        <header className="flex min-h-18 items-center justify-between gap-4 border-b border-base-200 bg-background-100 px-4 py-3 sm:px-6">
-          <div className="flex items-center gap-3">
-            <SidebarTrigger aria-label="Thu gọn điều hướng">☰</SidebarTrigger>
-            <div>
-              <p className="text-xs text-text-100">Thứ Tư, 12 tháng 8</p>
-              <h1 className="text-lg font-semibold text-title-50">Tổng quan kinh doanh</h1>
-            </div>
+        <header className="flex min-h-16 items-center justify-between gap-4 border-b border-base-200 bg-background-100 px-4 sm:px-6">
+          <div className="flex min-w-0 flex-1 items-center gap-3">
+            <SidebarTrigger aria-label="Thu gọn điều hướng">
+              <MenuHamburger1 size={18} />
+            </SidebarTrigger>
+            <label className="relative hidden w-full max-w-75 md:block">
+              <Search1 size={17} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-text-100" />
+              <Input aria-label="Tìm kiếm" placeholder="Tìm kiếm hoặc nhập lệnh..." className="w-full py-2 pl-9 pr-14 text-sm" />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 rounded bg-background-soft-100 px-1.5 py-0.5 text-[10px] font-medium text-text-100">⌘ K</span>
+            </label>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="primary" appearance="outline" size="sm">Xuất báo cáo</Button>
-            <Button size="sm">Tạo đơn hàng</Button>
+            <IconButton label="Chuyển giao diện"><MoonHalfLeft5 size={18} /></IconButton>
+            <IconButton label="Thông báo"><Bell1 size={18} /></IconButton>
             <Avatar size="sm">
               <AvatarFallback>Đ</AvatarFallback>
               <AvatarBadge size="sm" status="online" />
             </Avatar>
+            <ChevronDown size={16} className="hidden text-text-100 sm:block" />
           </div>
         </header>
 
-        <div className="mx-auto max-w-7xl space-y-6 p-4 sm:p-6">
-          <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <MetricCard label="Tổng doanh thu" value="245.800.000đ" change="+12,5%" />
-            <MetricCard label="Đơn hàng mới" value="1.284" change="+8,2%" />
-            <MetricCard label="Khách hàng hoạt động" value="8.492" change="+4,8%" />
-            <MetricCard label="Tỷ lệ hoàn tiền" value="1,24%" change="-0,3%" color="warning" />
+        <div className="mx-auto max-w-7xl space-y-5 p-4 sm:p-6">
+          <section className="grid gap-4 md:grid-cols-3">
+            <MetricCard value="$120,369" label="Giao dịch đang hoạt động" trend="20%" />
+            <MetricCard value="$234,210" label="Tổng doanh thu" trend="9,0%" />
+            <MetricCard value="874" label="Giao dịch đã đóng" trend="4,5%" negative />
           </section>
 
-          <section className="grid gap-6 xl:grid-cols-[minmax(0,1.65fr)_minmax(18rem,0.85fr)]">
+          <section className="grid gap-5 xl:grid-cols-[minmax(0,1.75fr)_minmax(17rem,0.8fr)]">
             <Card className="border border-base-200 shadow-xs">
-              <CardHeader>
-                <CardTitle className="text-lg">Doanh thu theo tháng</CardTitle>
-                <CardDescription>Hiệu suất trong 12 tháng gần nhất</CardDescription>
+              <CardHeader className="flex-row items-start justify-between gap-4">
+                <div>
+                  <CardTitle className="text-lg">Thống kê</CardTitle>
+                  <CardDescription>Chỉ tiêu theo từng tháng</CardDescription>
+                </div>
+                <div className="hidden rounded-lg border border-base-200 bg-background-soft-50 p-1 sm:flex">
+                  <Button variant="primary" appearance="fill" size="xs">Tháng</Button>
+                  <Button variant="ghost" size="xs">Quý</Button>
+                  <Button variant="ghost" size="xs">Năm</Button>
+                </div>
               </CardHeader>
               <CardContent className="pb-5">
-                <ChartContainer width="100%" height={280}>
-                  <AreaChart data={revenue} margin={{ top: 12, right: 8, left: -18, bottom: 0 }}>
+                <div className="grid gap-4 border-y border-base-200 py-4 sm:grid-cols-2">
+                  <div>
+                    <p className="text-xl font-semibold text-title-50">$212,142.12</p>
+                    <p className="mt-1 text-xs text-text-100">Lợi nhuận trung bình <Badge color="success">+23,2%</Badge></p>
+                  </div>
+                  <div>
+                    <p className="text-xl font-semibold text-title-50">$30,321.23</p>
+                    <p className="mt-1 text-xs text-text-100">Lợi nhuận năm <Badge color="error">-12,3%</Badge></p>
+                  </div>
+                </div>
+                <ChartContainer width="100%" height={250} className="mt-4">
+                  <AreaChart data={statistics} margin={{ top: 8, right: 8, left: -18, bottom: 0 }}>
                     <defs>
-                      <linearGradient id="revenue" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="var(--color-primary-500)" stopOpacity={0.28} />
+                      <linearGradient id="statistics-gradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="var(--color-primary-500)" stopOpacity={0.22} />
                         <stop offset="95%" stopColor="var(--color-primary-500)" stopOpacity={0} />
                       </linearGradient>
                     </defs>
                     <CartesianGrid vertical={false} strokeDasharray="3 3" />
                     <XAxis dataKey="month" axisLine={false} tickLine={false} />
-                    <YAxis axisLine={false} tickLine={false} width={38} />
+                    <YAxis axisLine={false} tickLine={false} width={34} />
                     <ChartTooltip content={<ChartTooltipContent />} />
-                    <Area
-                      type="monotone"
-                      dataKey="value"
-                      name="Doanh thu"
-                      stroke="var(--color-primary-500)"
-                      strokeWidth={2}
-                      fill="url(#revenue)"
-                    />
+                    <Area type="monotone" dataKey="revenue" name="Doanh thu" stroke="var(--color-primary-500)" strokeWidth={2} fill="url(#statistics-gradient)" />
+                    <Area type="monotone" dataKey="target" name="Mục tiêu" stroke="var(--color-primary-300)" strokeWidth={2} fill="transparent" />
                   </AreaChart>
                 </ChartContainer>
               </CardContent>
             </Card>
 
             <Card className="border border-base-200 shadow-xs">
-              <CardHeader>
-                <CardTitle className="text-lg">Mục tiêu tháng 8</CardTitle>
-                <CardDescription>Tiến độ theo chỉ số chính</CardDescription>
+              <CardHeader className="flex-row items-start justify-between">
+                <div>
+                  <CardTitle className="text-lg">Doanh thu dự kiến</CardTitle>
+                  <CardDescription>Mục tiêu tháng hiện tại</CardDescription>
+                </div>
+                <IconButton label="Tùy chọn"><MenuKebab1 size={18} /></IconButton>
               </CardHeader>
               <CardContent className="space-y-6 pb-5">
-                {goals.map((goal) => (
-                  <div key={goal.label}>
-                    <div className="mb-2 flex items-center justify-between gap-3">
-                      <span className="text-sm font-medium text-title-50">{goal.label}</span>
-                      <span className="text-sm text-text-100">{goal.value}%</span>
+                <CircleGauge />
+                <div className="space-y-4">
+                  <div>
+                    <div className="mb-2 flex items-center justify-between text-sm">
+                      <span className="font-medium text-title-50">Marketing</span>
+                      <span className="text-text-100">85%</span>
                     </div>
-                    <Progress progress={goal.value} />
+                    <Progress progress={85} />
                   </div>
-                ))}
-                <Badge color="primary" size="md">Cần thêm 18 đơn hàng để đạt mục tiêu</Badge>
+                  <div>
+                    <div className="mb-2 flex items-center justify-between text-sm">
+                      <span className="font-medium text-title-50">Bán hàng</span>
+                      <span className="text-text-100">55%</span>
+                    </div>
+                    <Progress progress={55} />
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </section>
 
-          <Card className="border border-base-200 shadow-xs">
-            <CardHeader className="flex-row items-center justify-between gap-4">
-              <div>
-                <CardTitle className="text-lg">Đơn hàng gần đây</CardTitle>
-                <CardDescription>Theo dõi giao dịch mới nhất</CardDescription>
-              </div>
-              <Button variant="primary" appearance="outline" size="sm">Xem tất cả</Button>
-            </CardHeader>
-            <CardContent className="pb-5">
-              <TableRoot>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Mã đơn</TableHead>
-                    <TableHead>Khách hàng</TableHead>
-                    <TableHead>Giá trị</TableHead>
-                    <TableHead>Trạng thái</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {orders.map((order) => (
-                    <TableRow key={order.id}>
-                      <TableCell className="text-sm font-semibold text-title-50">{order.id}</TableCell>
-                      <TableCell className="text-sm">{order.customer}</TableCell>
-                      <TableCell className="text-sm text-title-50">{order.amount}</TableCell>
-                      <TableCell><Badge color={order.color}>{order.status}</Badge></TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </TableRoot>
-            </CardContent>
-          </Card>
+          <section className="grid gap-5 xl:grid-cols-2">
+            <Card className="border border-base-200 shadow-xs">
+              <CardHeader className="flex-row items-start justify-between">
+                <div>
+                  <CardTitle className="text-lg">Danh mục bán hàng</CardTitle>
+                  <CardDescription>Phân bổ doanh thu theo kênh</CardDescription>
+                </div>
+                <IconButton label="Tùy chọn"><MenuKebab1 size={18} /></IconButton>
+              </CardHeader>
+              <CardContent className="grid gap-5 pb-5 sm:grid-cols-[11rem_1fr] sm:items-center">
+                <div className="relative mx-auto flex size-40 items-center justify-center rounded-full border-12 border-primary-100 border-t-primary-500 border-r-primary-300">
+                  <div className="text-center">
+                    <p className="text-xs text-text-100">Tổng</p>
+                    <p className="text-xl font-semibold text-title-50">2.450</p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <p className="flex items-center justify-between text-sm"><span className="flex items-center gap-2 text-text-100"><span className="size-2 rounded-full bg-primary-500" />Affiliate</span><strong className="text-title-50">48%</strong></p>
+                  <p className="flex items-center justify-between text-sm"><span className="flex items-center gap-2 text-text-100"><span className="size-2 rounded-full bg-primary-300" />Trực tiếp</span><strong className="text-title-50">33%</strong></p>
+                  <p className="flex items-center justify-between text-sm"><span className="flex items-center gap-2 text-text-100"><span className="size-2 rounded-full bg-background-soft-300" />Adsense</span><strong className="text-title-50">19%</strong></p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-base-200 shadow-xs">
+              <CardHeader className="flex-row items-start justify-between">
+                <div>
+                  <CardTitle className="text-lg">Lịch sắp tới</CardTitle>
+                  <CardDescription>Các hoạt động cần theo dõi</CardDescription>
+                </div>
+                <IconButton label="Tùy chọn"><MenuKebab1 size={18} /></IconButton>
+              </CardHeader>
+              <CardContent className="divide-y divide-base-200 pb-5">
+                {schedule.map((item) => (
+                  <div key={item.title} className="flex gap-3 py-3 first:pt-0 last:pb-0">
+                    <span className="mt-1 flex size-5 shrink-0 items-center justify-center rounded border border-base-200"><CheckCircle1 size={13} className="text-text-100" /></span>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-sm font-medium text-title-50">{item.title}</p>
+                        <span className="flex items-center gap-1 text-xs text-text-100"><ClockThree size={13} />{item.time}</span>
+                      </div>
+                      <p className="mt-1 text-xs text-text-100">{item.date} · Xem chi tiết cuộc họp</p>
+                    </div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </section>
         </div>
       </main>
     </SidebarProvider>
